@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Logika.VyletController">
+   <children>
+      <Button fx:id="tlacitko" layoutX="406.0" layoutY="419.0" mnemonicParsing="false" onAction="#potvrdit" prefHeight="44.0" prefWidth="129.0" text="Potvrdit" />
+      <TextField fx:id="nazevVyletu" layoutX="47.0" layoutY="75.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label layoutX="130.0" layoutY="50.0" text="Název výletu" />
+      <TextArea fx:id="popis" layoutX="640.0" layoutY="177.0" prefHeight="200.0" prefWidth="269.0" />
+      <Label layoutX="747.0" layoutY="149.0" text="Popis výletu" />
+      <DatePicker fx:id="zacatek" layoutX="359.0" layoutY="74.0" prefHeight="25.0" prefWidth="233.0" />
+      <DatePicker fx:id="konec" layoutX="662.0" layoutY="75.0" prefHeight="25.0" prefWidth="233.0" />
+      <Label layoutX="455.0" layoutY="51.0" text="Začátek" />
+      <Label layoutX="762.0" layoutY="51.0" text="Konec" />
+      <TableView fx:id="pruvodce" layoutX="25.0" layoutY="177.0" prefHeight="200.0" prefWidth="269.0">
+        <columns>
+          <TableColumn fx:id="IDP" prefWidth="75.0" text="ID Průvodce" />
+          <TableColumn fx:id="jmeno" prefWidth="78.0" text="Jméno" />
+            <TableColumn fx:id="prijmeni" prefWidth="115.0" text="Přijmení" />
+        </columns>
+      </TableView>
+      <TableView fx:id="klient" layoutX="337.0" layoutY="177.0" prefHeight="200.0" prefWidth="269.0">
+         <columns>
+            <TableColumn fx:id="IDK" prefWidth="75.0" text="IČO" />
+            <TableColumn fx:id="nazevFirmy" prefWidth="193.0" text="Název firmy" />
+         </columns>
+      </TableView>
+      <Label layoutX="457.0" layoutY="149.0" text="Klient" />
+      <Label layoutX="135.0" layoutY="149.0" text="Průvodce" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="1138.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Logika.MainController">
+   <children>
+      <AnchorPane fx:id="panelMenu" prefHeight="611.0" prefWidth="1138.0">
+         <children>
+            <Button layoutX="167.0" layoutY="485.0" mnemonicParsing="false" onAction="#zobrazKlienty" prefHeight="50.0" prefWidth="139.0" text="Klienti" />
+            <Button layoutX="495.0" layoutY="485.0" mnemonicParsing="false" onAction="#zobrazVylety" prefHeight="50.0" prefWidth="139.0" text="Výlety" />
+            <Button layoutX="832.0" layoutY="485.0" mnemonicParsing="false" onAction="#zobrazPruvodce" prefHeight="50.0" prefWidth="139.0" text="Průvodci" />
+            <ImageView fitHeight="426.0" fitWidth="954.0" layoutX="88.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@obrazek.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelKlientu" prefHeight="611.0" prefWidth="1138.0" visible="false">
+         <children>
+            <TableView fx:id="tableKlienti" layoutX="70.0" layoutY="86.0" prefHeight="439.0" prefWidth="618.0">
+              <columns>
+                <TableColumn fx:id="kIco" prefWidth="75.0" text="IČO" />
+                <TableColumn fx:id="kNazev" prefWidth="212.0" text="Název firmy" />
+                  <TableColumn fx:id="kEmail" prefWidth="219.0" text="Email" />
+                  <TableColumn fx:id="kTelefon" prefWidth="111.0" text="Telefon" />
+              </columns>
+            </TableView>
+            <Separator layoutX="754.0" orientation="VERTICAL" prefHeight="611.0" prefWidth="0.0" />
+            <Button layoutX="877.0" layoutY="168.0" mnemonicParsing="false" onAction="#novyKlient" prefHeight="50.0" prefWidth="139.0" text="Nový klient" />
+            <Button layoutX="877.0" layoutY="248.0" mnemonicParsing="false" onAction="#upravitKlienta" prefHeight="50.0" prefWidth="139.0" text="Upravit klienta" />
+            <Button layoutX="877.0" layoutY="329.0" mnemonicParsing="false" onAction="#smazKlienta" prefHeight="50.0" prefWidth="139.0" text="Smaž klienta" />
+            <Button layoutX="877.0" layoutY="410.0" mnemonicParsing="false" onAction="#menu" prefHeight="50.0" prefWidth="139.0" text="Zpět do menu" />
+            <Label layoutX="261.0" layoutY="23.0" text="Evidovaní klienti">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelPruvodcu" prefHeight="611.0" prefWidth="1138.0" visible="false">
+         <children>
+            <TableView fx:id="tablePruvodcu" layoutX="70.0" layoutY="86.0" prefHeight="439.0" prefWidth="618.0">
+               <columns>
+                  <TableColumn fx:id="pID" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="pJmeno" prefWidth="212.0" text="Jméno" />
+                  <TableColumn fx:id="pPrijmeni" prefWidth="219.0" text="Přijmení" />
+                  <TableColumn fx:id="pTelefon" prefWidth="111.0" text="Telefon" />
+               </columns>
+            </TableView>
+            <Separator layoutX="754.0" orientation="VERTICAL" prefHeight="611.0" prefWidth="0.0" />
+            <Button layoutX="878.0" layoutY="166.0" mnemonicParsing="false" onAction="#novyPruvodce" prefHeight="50.0" prefWidth="139.0" text="Nový průvodce" />
+            <Button layoutX="878.0" layoutY="246.0" mnemonicParsing="false" onAction="#upravitPruvodce" prefHeight="50.0" prefWidth="139.0" text="Upravit průvodce" />
+            <Button layoutX="878.0" layoutY="327.0" mnemonicParsing="false" onAction="#smazPruvodce" prefHeight="50.0" prefWidth="139.0" text="Smaž průvodce" />
+            <Button layoutX="878.0" layoutY="402.0" mnemonicParsing="false" onAction="#menu" prefHeight="50.0" prefWidth="139.0" text="Zpět do menu" />
+            <Label layoutX="242.0" layoutY="23.0" text="Evidovaní průvodci">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelVyletu" prefHeight="611.0" prefWidth="1138.0" visible="false">
+         <children>
+            <TableView fx:id="tableVyletu" layoutX="24.0" layoutY="70.0" onMouseClicked="#vyplnPopisVyletu" prefHeight="439.0" prefWidth="702.0">
+               <columns>
+                  <TableColumn fx:id="vID" prefWidth="59.0" text="ID" />
+                  <TableColumn fx:id="vIDK" prefWidth="91.0" text="ID Klienta" />
+                  <TableColumn fx:id="vIDP" prefWidth="86.0" text="ID Průvodce" />
+                  <TableColumn fx:id="vNazev" prefWidth="216.0" text="Název výletu" />
+                  <TableColumn fx:id="vZacatek" prefWidth="124.0" text="Začátek" />
+                  <TableColumn fx:id="vKonec" prefWidth="125.0" text="Konec" />
+               </columns>
+            </TableView>
+            <Separator layoutX="754.0" orientation="VERTICAL" prefHeight="611.0" prefWidth="0.0" />
+            <Button layoutX="70.0" layoutY="539.0" mnemonicParsing="false" onAction="#novyVylet" prefHeight="50.0" prefWidth="139.0" text="Nový výlet" />
+            <Button layoutX="549.0" layoutY="539.0" mnemonicParsing="false" onAction="#upravitVylet" prefHeight="50.0" prefWidth="139.0" text="Upravit výlet" />
+            <Button layoutX="310.0" layoutY="539.0" mnemonicParsing="false" onAction="#smazVylet" prefHeight="50.0" prefWidth="139.0" text="Smaž výlet" />
+            <TextArea fx:id="vyletPopis" editable="false" layoutX="788.0" layoutY="98.0" prefHeight="411.0" prefWidth="325.0" wrapText="true" />
+            <Button layoutX="881.0" layoutY="539.0" mnemonicParsing="false" onAction="#menu" prefHeight="50.0" prefWidth="139.0" text="Zpět do menu" />
+            <Label layoutX="919.0" layoutY="70.0" text="Popis výletu" />
+            <Label layoutX="259.0" layoutY="14.0" text="Evidované výlety">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
